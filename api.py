@@ -10,6 +10,10 @@ import numpy as np
 # Your API definition
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def get_prediction():
+    print('Prediction')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if lr:
