@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def get_prediction():
     print('Prediction')
-
+    return ('prediction')
 @app.route('/predict', methods=['POST'])
 def predict():
     if lr:
@@ -35,14 +35,14 @@ def predict():
         return ('No model here to use')
 
 if __name__ == '__main__':
-    try:
-        port = int(sys.argv[1]) # This is for a command-line input
-    except:
-        port = 12345 # If you don't provide any port the port will be set to 12345
+    #try:
+     #   port = int(sys.argv[1]) # This is for a command-line input
+    #except:
+     #   port = 12345 # If you don't provide any port the port will be set to 12345
 
     lr = joblib.load("model.pkl") # Load "model.pkl"
     print ('Model loaded')
     model_columns = joblib.load("model_columns.pkl") # Load "model_columns.pkl"
     print ('Model columns loaded')
 
-    app.run(port=port, debug=True)
+    #app.run(port=port, debug=True)
