@@ -14,6 +14,7 @@ app = Flask(__name__)
 def get_prediction():
     print('Prediction')
     return ('prediction')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if lr:
