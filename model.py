@@ -37,4 +37,4 @@ lr = joblib.load('model.pkl')
 # Saving the data columns from training
 model_columns = list(x.columns)
 joblib.dump(model_columns, 'model_columns.pkl')
-print("Models columns dumped!")
+print("Models columns dumped!!")
