@@ -17,7 +17,6 @@ def get_prediction():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    if lr:
         try:
             json_ = request.json
             print(json_)
@@ -31,9 +30,7 @@ def predict():
         except:
 
             return jsonify({'trace': traceback.format_exc()})
-    else:
-        print ('Train the model first')
-        return ('No model here to use')
+
 
 if __name__ == '__main__':
 
