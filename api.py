@@ -25,7 +25,7 @@ def predict():
 
             prediction = list(lr.predict(query))
 
-            return jsonify({'prediction': str(prediction)})
+            return jsonify({'Prediction': str(prediction)})
 
         except:
 
