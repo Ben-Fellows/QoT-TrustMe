@@ -15,8 +15,9 @@ CORS(app)
 
 
 @app.route('/', methods=['GET'])
-@cross_origin()
+@cross_origin(origin='*')
 def get_prediction():
+    print('Prediction')
     print('Prediction')
     return ('prediction')
 
