@@ -6,11 +6,14 @@ import joblib
 import traceback
 import pandas as pd
 import numpy as np
+from flask_cors import CORS, cross_origin
 
 # Your API definition
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def get_prediction():
     print('Prediction')
     return ('prediction')
